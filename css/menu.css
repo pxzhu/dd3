@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div img {
+  width: 30px;
+  float: right;
+  margin-right: 10px;
+}
+.menu {
+  float: left;
+  margin-right: 0px;
+  margin-left: 10px;
+}
+
+.top-menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-width: 100%;
+  background-color: #bbbbbb;
+}
+.top-menu a {
+  text-decoration: none;
+  position: relative;
+}
+.top-menu a h2 {
+  color: black;
+  text-align: center;
+  margin: 0 auto;
+  width: 80px;
+  display: inline-block;
+  padding-left: 45%;
+}
