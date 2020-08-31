@@ -22,6 +22,33 @@ CREATE TABLE category(
   PRIMARY KEY(id)
 );
 
+INSERT INTO
+category(name)
+VALUES('sleeveless');
+INSERT INTO
+category(name)
+VALUES('short-sleeve');
+INSERT INTO
+category(name)
+VALUES('long-sleeve');
+INSERT INTO
+category(name)
+VALUES('crop');
+INSERT INTO
+category(name)
+VALUES('slacks');
+INSERT INTO
+category(name)
+VALUES('blue-jeans');
+INSERT INTO
+category(name)
+VALUES('shorts');
+INSERT INTO
+category(name)
+VALUES('long-pants');
+
+
+
 CREATE TABLE goods(
   id INT(20) NOT NULL AUTO_INCREMENT,
   gcode VARCHAR(20) NOT NULL,

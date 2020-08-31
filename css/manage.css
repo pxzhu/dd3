@@ -1,0 +1,131 @@
+fieldset {
+  width: 400px;
+  height: 800px;
+  display: inline-block;
+  position: absolute;
+  top: 10%;
+  border: 2px solid black;
+  border-left-style: none;
+  border-right-style: none;
+}
+fieldset legend {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 0%;
+}
+fieldset input {
+  width: 390px;
+  font-size: large;
+}
+.u-name {
+  height: 40px;
+  margin-bottom: 20px;
+}
+.u-descript {
+  height: 500px;
+  margin-bottom: 20px;
+}
+#u-image-container img {
+  margin-top: 15px;
+  float: left;
+  width: 160px;
+  height: 90px;
+}
+.m-name {
+  height: 40px;
+  margin-bottom: 20px;
+}
+.m-descript {
+  height: 250px;
+  margin-bottom: 20px;
+}
+#m-image-container img {
+  margin-top: 15px;
+  float: left;
+  width: 80px;
+  height: 45px;
+}
+.g-btn {
+  width: 100px;
+  float: right;
+  margin-top: 100px;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: whitesmoke;
+}
+.g-btn-m {
+  width: 100px;
+  float: right;
+  margin-top: 25px;
+  background-color: dodgerblue;
+  border: 1px solid dodgerblue;
+  color: whitesmoke;
+}
+.m-search {
+  width: 360px;
+}
+.m-btn {
+  background-image: url("../asset/icon/search.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+.line {
+  margin-top: 75px;
+  border: 1px solid rgb(204, 210, 216);
+  margin-bottom: 10px;
+}
+
+.upload {
+  right: 50%;
+  margin-right: 3%;
+}
+.modify {
+  left: 50%;
+  margin-left: 3%;
+}
+p {
+  display: block;
+  position: absolute;
+  top: 99%;
+}
+.g-des, .g-pic, .g-once, .g-m-btn {
+  display: inline-block;
+  position: relative;
+}
+.g-des {
+  height: 100px;
+}
+.g-pic {
+  float: left;
+}
+.g-once {
+  width: 360px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.g-once-c {
+  width: 290px;
+}
+.g-once h5 {
+  margin-left: 50px;
+  width: 100px;
+}
+.g-once h5 a {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+}
+.g-m-btn {
+  width: 50px;
+  top: 45%;
+  left: 90%;
+  text-align: center;
+  position: absolute;
+  display: inline-block;
+}

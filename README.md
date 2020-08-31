@@ -5,4 +5,10 @@
 
 - 2020-08-30
 >pages(> index )    
+>js(> slide show )    
 >database(> CREATE )    
+
+- 2020-08-30
+>pages(> management-page, index.html -> index.php[category SELECT] )    
+>js(> slide menu, upload )    
+>database(> INSERT[category] )    

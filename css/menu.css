@@ -1,3 +1,6 @@
+html.open {
+  overflow: hidden;
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,11 +10,6 @@ div img {
   width: 30px;
   float: right;
   margin-right: 10px;
-}
-.menu {
-  float: left;
-  margin-right: 0px;
-  margin-left: 10px;
 }
 
 .top-menu {
