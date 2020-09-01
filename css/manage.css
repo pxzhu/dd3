@@ -89,11 +89,7 @@ fieldset input {
   left: 50%;
   margin-left: 3%;
 }
-p {
-  display: block;
-  position: absolute;
-  top: 99%;
-}
+
 .g-des, .g-pic, .g-once, .g-m-btn {
   display: inline-block;
   position: relative;

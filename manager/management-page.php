@@ -19,11 +19,11 @@ include "../db/dbConn.php";
     <a href="../index.php">
       <h2 class="main">VIEW.S</h2>
     </a>
-    <a href="../pages/mypage.html">
-      <img class="cart" src="../asset/icon/shopping-cart.png" alt="MyPage">
-    </a>
     <a href="../pages/cart.html">
-      <img class="user" src="../asset/icon/user.png" alt="Cart">
+      <img class="cart" src="../asset/icon/shopping-cart.png" alt="Cart">
+    </a>
+    <a href="../pages/mypage.html">
+      <img class="user" src="../asset/icon/user.png" alt="MyPage">
     </a>
   </div>
   <div class="btn"></div>
@@ -111,7 +111,7 @@ include "../db/dbConn.php";
 
 
   <!-- 아이콘 -->
-  <p>
+  <p class="icon">
     <br>
     <br>
     <br>

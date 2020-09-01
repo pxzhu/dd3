@@ -1,0 +1,64 @@
+.hot-goods {
+  position: relative;
+  top: 40px;
+  left: 50%;
+  margin: 0 0 0 -400px;
+  width: 800px;
+  height: 300px;
+  border: 1px solid #c5c4c4;
+}
+.hot-list {
+  position: relative;
+  width: 180px;
+  height: 280px;
+  border: 1px solid #c5c4c4;
+  display: inline-block;
+  margin: 8px 4px 0 11.5px;
+}
+.hot-list a {
+  text-decoration: none;
+}
+.hot-list a img {
+  display: block;
+  margin: 0px auto;
+  width: 180px;
+  height: 200px;
+}
+.hot-name mark {
+  font-weight: bold;
+  color: red;
+  margin: 0 0 0 5px;
+}
+.hot-name small {
+  color: black;
+}
+
+.normal-goods {
+  position: relative;
+  top: 40px;
+  left: 50%;
+  margin: 150px 0 0 -400px;
+  width: 800px;
+  height: 720px;
+  border: 1px solid #c5c4c4;
+}
+.normal-list {
+  position: relative;
+  width: 140px;
+  height: 200px;
+  border: 1px solid #c5c4c4;
+  display: inline-block;
+  margin: 8px 4.2px 0 12px;
+}
+.normal-list a {
+  text-decoration: none;
+}
+.normal-list a img {
+  display: block;
+  margin: 0px auto;
+  width: 140px;
+  height: 160px;
+}
+.normal-name small {
+  color: black;
+}

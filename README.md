@@ -12,3 +12,8 @@
 >pages(> management-page, index.html -> index.php[category SELECT] )    
 >js(> slide menu, upload )    
 >database(> INSERT[category] )    
+
+- 2020-08-30
+>pages(> goods )    
+>database(> CREATE, INSERT )    
+>function(> RandomString )    
