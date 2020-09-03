@@ -1,0 +1,22 @@
+.page-num {
+  text-align: center;
+  border: 1px solid black;
+  width: 800px;
+  height: 80px;
+  margin: 0 auto;
+}
+.page-num ul {
+  display: inline-block;
+  list-style: none;
+  margin-top: 30px;
+  width: 500px;
+  left: 50%;
+  padding: 0;
+}
+.page-num li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 0 0 0 0;
+  border: 0;
+  left: 50%;
+}

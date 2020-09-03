@@ -30,39 +30,60 @@ include "../db/dbConn.php";
   <div id="menu">
     <div class="close"></div>
     <form class="search" method="post" action="">
-    <?php 
-    $sql = mq("SELECT * FROM category");
-    ?>
       <select name="category">
-        <option value="top">상의</option>
-        <option value="bottom">하의</option>
-        <option value="shoes">신발</option>
+        <?php
+        $sql = mq("SELECT name FROM tCategory");
+        while($tc = mysqli_fetch_array($sql)) {
+          echo "<option>{$tc['name']}</option>";
+        }
+        ?>
       </select>
-      </option>
       <input type="text">
       <input type="image" src="../asset/icon/search.png" class="s-btn">
     </form>
     <ul>
       <li class="menu">
-        <a>상의</a>
+        <a>top</a>
         <ul class="hide">
         <?php
+        $sql = mq("SELECT c.id, c.name, t.name AS tname 
+                    FROM category c 
+                    LEFT JOIN tCategory t 
+                    ON c.tCid = t.id
+                    WHERE t.name = 'top'");
         while($query = mysqli_fetch_array($sql)) {
-          echo "<li>".$query['name']."</li>";
-          if($query['id'] == 4) {
-            break;
-          }
+          echo "<li><a href=\"./pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
         }
         ?>
         </ul>
       </li>
 
       <li class="menu">
-        <a>하의</a>
+        <a>bottom</a>
         <ul class="hide">
         <?php
+        $sql = mq("SELECT c.id, c.name, t.name AS tname 
+                    FROM category c 
+                    LEFT JOIN tCategory t 
+                    ON c.tCid = t.id
+                    WHERE t.name = 'bottom'");
         while($query = mysqli_fetch_array($sql)) {
-          echo "<li>".$query['name']."</li>";
+          echo "<li><a href=\"./pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
+        }
+        ?>
+        </ul>
+      </li>
+      <li class="menu">
+        <a>shoes</a>
+        <ul class="hide">
+        <?php
+        $sql = mq("SELECT c.id, c.name, t.name AS tname 
+                    FROM category c 
+                    LEFT JOIN tCategory t 
+                    ON c.tCid = t.id
+                    WHERE t.name = 'shoes'");
+        while($query = mysqli_fetch_array($sql)) {
+          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
         }
         ?>
         </ul>

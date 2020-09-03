@@ -32,12 +32,11 @@
 .hot-name small {
   color: black;
 }
-
 .normal-goods {
   position: relative;
-  top: 40px;
+  top: 10px;
   left: 50%;
-  margin: 150px 0 0 -400px;
+  margin: 50px 0 0 -400px;
   width: 800px;
   height: 720px;
   border: 1px solid #c5c4c4;
@@ -60,5 +59,45 @@
   height: 160px;
 }
 .normal-name small {
+  color: black;
+}
+.category-search {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  top: 50px;
+  left: 50%;
+  margin: 0 0 0 -400px;
+  border: 1px solid #c5c4c4;
+}
+.category-search h1, h3 {
+  text-align: center;
+}
+.view-category {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  left: 50%;
+  margin: 0 0 0 -150px;
+  border: 1px solid #c5c5c4;
+}
+.vc-p {
+  margin: 0 auto;
+}
+.vc-list {
+  position: relative;
+  border: 1px solid #c5c5c4;
+  width: 800px;
+  height: 70px;
+  top: 130px;
+  text-align: center;
+}
+.vc-list h6 {
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+}
+.vc-list h6 a {
+  text-decoration: none;
   color: black;
 }

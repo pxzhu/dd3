@@ -17,3 +17,7 @@
 >pages(> goods )    
 >database(> CREATE, INSERT )    
 >function(> RandomString )    
+
+- 2020-09-03
+>pages(> goods[category] )    
+>database(> ALTER )    

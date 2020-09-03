@@ -39,7 +39,6 @@ include "./db/dbConn.php";
         }
         ?>
       </select>
-      </option>
       <input type="text">
       <input type="image" src="./asset/icon/search.png" class="s-btn">
     </form>
@@ -71,6 +70,21 @@ include "./db/dbConn.php";
                     WHERE t.name = 'bottom'");
         while($query = mysqli_fetch_array($sql)) {
           echo "<li><a href=\"./pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
+        }
+        ?>
+        </ul>
+      </li>
+      <li class="menu">
+        <a>shoes</a>
+        <ul class="hide">
+        <?php
+        $sql = mq("SELECT c.id, c.name, t.name AS tname 
+                    FROM category c 
+                    LEFT JOIN tCategory t 
+                    ON c.tCid = t.id
+                    WHERE t.name = 'shoes'");
+        while($query = mysqli_fetch_array($sql)) {
+          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
         }
         ?>
         </ul>
