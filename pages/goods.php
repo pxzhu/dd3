@@ -1,5 +1,6 @@
 <?php 
-include "../db/dbConn.php";
+require_once('../db/dbConn.php'); 
+require_once('../data/menu.php'); 
 $cid = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@ $cid = $_GET['id'];
 
 <head>
   <meta charset="UTF-8">
-  <title>VIEW.S</title>
+  <title>VIEW.S - 상품</title>
   <link rel="stylesheet" type="text/css" href="../css/menu.css">
   <link rel="stylesheet" type="text/css" href="../css/s-menu.css">
   <link rel="stylesheet" type="text/css" href="../css/goods.css">
@@ -17,83 +18,10 @@ $cid = $_GET['id'];
 </head>
 
 <body>
-  <div class="top-menu">
-    <a href="../index.php">
-      <h2 class="main">VIEW.S</h2>
-    </a>
-    <a href="../pages/cart.html">
-      <img class="cart" src="../asset/icon/shopping-cart.png" alt="Cart">
-    </a>
-    <a href="../pages/mypage.html">
-      <img class="user" src="../asset/icon/user.png" alt="MyPage">
-    </a>
-  </div>
-  <div class="btn"></div>
-  <div id="menu">
-    <div class="close"></div>
-    <form class="search" method="post" action="">
-      <select name="category">
-        <?php
-        $sql = mq("SELECT name FROM tCategory");
-        while($tc = mysqli_fetch_array($sql)) {
-          echo "<option>{$tc['name']}</option>";
-        }
-        ?>
-      </select>
-      <input type="text">
-      <input type="image" src="../asset/icon/search.png" class="s-btn">
-    </form>
-    <ul>
-      <li class="menu">
-        <a>top</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'top'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-
-      <li class="menu">
-        <a>bottom</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'bottom'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-
-      <li class="menu">
-        <a>shoes</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'shoes'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  
+  <?php 
+  require_once('../data/menu.php');
+  require_once('../data/icon.php');
+  ?>
   <div class="hot-goods">
     <?php
     // 인기상품
@@ -154,18 +82,22 @@ $cid = $_GET['id'];
       ?>
     </div>
   </div>
-
   <?php
-  /*
   if(isset($_GET['page'])) {
     $page = $_GET['page'];
   } else {
     $page = 1;
   }
-
-  $sql = mq("SELECT * 
+  if(isset($cid)) {
+    $sql = mq("SELECT *
+              FROM goods
+              WHERE gcid = $cid
+              ");
+  } else {
+    $sql = mq("SELECT * 
             FROM goods
             ");
+  }
   $goods_total = mysqli_num_rows($sql); // 상품 총 갯수
   $list = 15; // 한 페이지 당 상품 수
   $page_list = 10; // 페이지 갯수
@@ -173,103 +105,79 @@ $cid = $_GET['id'];
   $page_start = (($page_num - 1) * $page_list) + 1; // 페이지 시작 번호
   $page_end = $page_start + $page_list - 1; // 페이지 끝 번호
   $page_total = ceil($goods_total / $list); // 페이징 한 페이지 수 구하기
+
   if($page_end > $page_total) {
     $page_end = $page_total;
   } // 만약 블록의 마지막 번호가 페이지 수 보다 많다면 마지막 번호는 페이지 수
   $pl_total = ceil($page_total / $page_list); // 블록 총 갯수
   $start_num = ($page - 1) * $list;
-  $sql = mq("SELECT *
+  if(isset($cid)) {
+    $sql = mq("SELECT *
             FROM goods
             WHERE gcid = $cid
             ORDER BY id DESC
             LIMIT $start_num, $list
             ");
-  while($goods = mysqli_fetch_array($sql)) {
-    $title = $goods['gname'];
-
-    if(stelen($title) > 20) {
-      $title = str_replace($goods['gname'], mb_substr($goods['gname'], 0, 20, "UTF-8")."...", $goods['gname']);
-    }
-  }
-  */
-  ?>
-  <div class="normal-goods">
-    <?php
-    // 일반상품
-    if(isset($cid)) {
-      $sql = mq("SELECT * 
-                FROM goods 
-                WHERE gcid = $cid
-                ORDER BY id DESC 
-                LIMIT 15");
-    } else {
-      $sql = mq("SELECT * 
-                FROM goods 
-                ORDER BY id DESC 
-                LIMIT 15");
-    }
-    
-    $c_sql = mysqli_num_rows($sql);
-    if($c_sql != 0) {
-      while($normal = mysqli_fetch_array($sql)) {
-        echo "<div class=\"normal-list\">";
-        echo "<a href=\"\">";
-        echo "<img src=\"../asset/img/top/{$normal['gpicture']}\" alt=\"상품사진\">";
-        echo "<div class=\"normal-name\">";
-        echo "<small>{$normal['gname']}</small>";
-        echo "</div>";
-        echo "</a>";
-        echo "</div>";
-      }
-    } else {
-      echo "<p style=\"text-align: center;\">상품이 없습니다.</p>";
-      echo "</div>";
-    }
-    ?>
-    <div class="page-num">
-      
-      <ul>
-        <li>이전</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>다음</li>
-      </ul>
-    </div>
-
-  </div>
-  <?php
-  /*
-  if(isset($_GET['id'])) {
-    echo "hi";
   } else {
-    echo "bye";
-  }*/
+    $sql = mq("SELECT *
+            FROM goods
+            ORDER BY id DESC
+            LIMIT $start_num, $list
+            ");
+  }
+
+  echo "<div class=\"normal-goods\">";
+  $c_sql = mysqli_num_rows($sql); 
+  if($c_sql != 0) {
+    while($goods = mysqli_fetch_array($sql)) {
+      $title = $goods['gname'];
+      if(strlen($title) > 18) {
+        $title = str_replace($goods['gname'], mb_substr($goods['gname'], 0, 18, "UTF-8")."...", $goods['gname']);
+      }
+      echo "<div class=\"normal-list\">";
+      echo "<a href=\"\">";
+      echo "<img src=\"../asset/img/top/{$goods['gpicture']}\" alt=\"상품사진\">";
+      echo "<div class=\"normal-name\">";
+      echo "<small>{$title}</small>";
+      echo "</div>";
+      echo "</a>";
+      echo "</div>";
+    } 
+  } else {
+    echo "<p style=\"text-align: center;\">상품이 없습니다.</p>";
+    echo "</div>";
+  }
+
+    echo "<div class=\"page-num\">";
+      echo "<ul>";
+        if($page <= 1) {
+        } else {
+          echo "<li><a href='?page=1'>처음</a></li>";
+          $pre = $page - 1;
+          echo "<li><a href='?page=$pre'>이전</a></li>";
+        }
+        for($i = $page_start; $i <= $page_end; $i++) {
+          if($page == $i) {
+            echo "<li class=\"pn-select\">$i</li>";
+          } else {
+            echo "<li><a href='?page=$i'>$i</a></li>";
+          }
+        }
+        if($page_num < $page_total) {
+          $next = $page + 1;
+          if($next <= $page_total) {
+            echo "<li><a href='?page=$next'>다음</a></li>";
+          }
+        }
+        if($page >= $page_total) {
+        } else {
+          echo "<li><a href='?page=$page_total'>마지막</a></li>";
+        }
+      echo "</ul>";
+    echo "</div>";
+  echo "</div>";
   ?>
-
-
-  <!-- 아이콘 -->
-  <p class="icon">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
-    <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-  </p>
+  
 </body>
 
 </html>

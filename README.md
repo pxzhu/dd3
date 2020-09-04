@@ -21,3 +21,8 @@
 - 2020-09-03
 >pages(> goods[category] )    
 >database(> ALTER )    
+
+- 2020-09-04
+>pages(> goods[pages, goods-name] )    
+>code(> refactoring[index, menu, icon] )    
+>logo change    

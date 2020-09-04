@@ -1,6 +1,6 @@
 .page-num {
   text-align: center;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 800px;
   height: 80px;
   margin: 0 auto;
@@ -19,4 +19,12 @@
   padding: 0 0 0 0;
   border: 0;
   left: 50%;
+}
+.page-num a {
+  text-decoration: none;
+  color: black;
+}
+.pn-select {
+  color: red;
+  font-weight: bold;
 }

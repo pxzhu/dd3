@@ -1,5 +1,6 @@
 <?php 
-include "../db/dbConn.php";
+require_once('../db/dbConn.php'); 
+require_once('../data/menu.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="kr">
@@ -15,81 +16,10 @@ include "../db/dbConn.php";
 </head>
 
 <body>
-  <div class="top-menu">
-    <a href="../index.php">
-      <h2 class="main">VIEW.S</h2>
-    </a>
-    <a href="../pages/cart.html">
-      <img class="cart" src="../asset/icon/shopping-cart.png" alt="Cart">
-    </a>
-    <a href="../pages/mypage.html">
-      <img class="user" src="../asset/icon/user.png" alt="MyPage">
-    </a>
-  </div>
-  <div class="btn"></div>
-  <div id="menu">
-    <div class="close"></div>
-    <form class="search" method="post" action="">
-      <select name="category">
-        <?php
-        $sql = mq("SELECT name FROM tCategory");
-        while($tc = mysqli_fetch_array($sql)) {
-          echo "<option>{$tc['name']}</option>";
-        }
-        ?>
-      </select>
-      <input type="text">
-      <input type="image" src="../asset/icon/search.png" class="s-btn">
-    </form>
-    <ul>
-      <li class="menu">
-        <a>top</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'top'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"./pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-
-      <li class="menu">
-        <a>bottom</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'bottom'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"./pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-      <li class="menu">
-        <a>shoes</a>
-        <ul class="hide">
-        <?php
-        $sql = mq("SELECT c.id, c.name, t.name AS tname 
-                    FROM category c 
-                    LEFT JOIN tCategory t 
-                    ON c.tCid = t.id
-                    WHERE t.name = 'shoes'");
-        while($query = mysqli_fetch_array($sql)) {
-          echo "<li><a href=\"../pages/goods.php?id={$query['id']}\">{$query['name']}</a></li>";
-        }
-        ?>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <?php 
+  require_once('../data/menu.php');
+  require_once('../data/icon.php');
+  ?>
   
   <fieldset class="upload">
     <legend>상품등록</legend>
@@ -129,23 +59,6 @@ include "../db/dbConn.php";
       <input class="g-btn-m" type="submit" value="등록하기">
     </form>
   </fieldset>
-
-
-  <!-- 아이콘 -->
-  <p class="icon">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from
-    <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-  </p>
 </body>
 
 </html>
