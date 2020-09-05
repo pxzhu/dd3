@@ -12,7 +12,8 @@
   width: 180px;
   height: 280px;
   border: 1px solid #c5c4c4;
-  display: inline-block;
+  display: block;
+  float: left;
   margin: 8px 4px 0 11.5px;
 }
 .hot-list a {
@@ -46,7 +47,8 @@
   width: 140px;
   height: 200px;
   border: 1px solid #c5c4c4;
-  display: inline-block;
+  display: block;
+  float: left;
   margin: 8px 4.2px 0 12px;
 }
 .normal-list a {

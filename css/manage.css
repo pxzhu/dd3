@@ -23,8 +23,19 @@ fieldset input {
   margin-bottom: 20px;
 }
 .u-descript {
-  height: 500px;
+  height: 450px;
   margin-bottom: 20px;
+}
+.u-price, .category {
+  position: relative;
+  width: 180px;
+  display: inline-block;
+  height: 40px;
+  margin: 0 5px 20px 5px;
+}
+.category {
+  text-align-last: center;
+  text-transform: uppercase;
 }
 #u-image-container img {
   margin-top: 15px;

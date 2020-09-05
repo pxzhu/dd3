@@ -26,3 +26,6 @@
 >pages(> goods[pages, goods-name] )    
 >code(> refactoring[index, menu, icon] )    
 >logo change    
+
+- 2020-09-05
+>pages(> management-page[INSERT] )    

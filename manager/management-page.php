@@ -23,14 +23,24 @@ require_once('../data/menu.php');
   
   <fieldset class="upload">
     <legend>상품등록</legend>
-    <form method="post" action="">
-      <input class="u-name" type="text" placeholder="상품명">
-      <input class="u-descript" type="text" placeholder="상품설명">
-      <input type="file" id="u-image" accept="image/*" onchange="SetThumbnail(event);">
+    <form method="post" action="../manager/g-regi.php" enctype="multipart/form-data">
+      <input class="u-name" type="text" name="gname" placeholder="상품명">
+      <input class="u-descript" type="text" name="gexplain" placeholder="상품설명">
+      <select class="category" name="gcategory">
+        <?php
+        $sql = mq("SELECT name FROM category");
+        while($tc = mysqli_fetch_array($sql)) {
+          echo "<option value=\"{$tc['name']}\">{$tc['name']}</option>";
+        }
+        ?>
+      </select>
+      <input class="u-price" type="text" name="gprice" placeholder="상품가격">
+      <input type="file" id="u-image" name="gimg" accept="image/*" onchange="SetThumbnail(event);">
       <div id="u-image-container"></div>
       <input class="g-btn" type="submit" value="등록하기">
     </form>
   </fieldset>
+
   <fieldset class="modify">
     <legend>상품수정</legend>
     <form method="post" action="">

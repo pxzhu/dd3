@@ -1,9 +1,12 @@
 .page-num {
+  position: relative;
   text-align: center;
   /*border: 1px solid black;*/
   width: 800px;
   height: 80px;
   margin: 0 auto;
+  float: left;
+  display: block;
 }
 .page-num ul {
   display: inline-block;

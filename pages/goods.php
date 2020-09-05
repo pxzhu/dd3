@@ -25,14 +25,19 @@ $cid = $_GET['id'];
   <div class="hot-goods">
     <?php
     // 인기상품
-    $sql = mq("SELECT * 
-                FROM goods 
-                ORDER BY gprice DESC 
-                LIMIT 4");
+    $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, g.gprice AS gprice, c.name AS cname, c.tCid AS tCid, t.name AS tname
+            FROM goods g
+            LEFT JOIN category c
+            ON g.gcid = c.id
+            LEFT JOIN tCategory t
+            ON c.tCid = t.id
+            ORDER BY g.gprice DESC
+            LIMIT 4
+            ");
     while($hot = mysqli_fetch_array($sql)) {
       echo "<div class=\"hot-list\">";
       echo "<a href=\"\">";
-      echo "<img src=\"../asset/img/top/{$hot['gpicture']}\" alt=\"\">";
+      echo "<img src=\"../asset/img/{$hot['tname']}/{$hot['gpicture']}\" alt=\"\">";
       echo "<div class=\"hot-name\">";
       echo "<mark>HOT!</mark>";
       echo "<small>{$hot['gname']}</small>";
@@ -112,19 +117,28 @@ $cid = $_GET['id'];
   $pl_total = ceil($page_total / $page_list); // 블록 총 갯수
   $start_num = ($page - 1) * $list;
   if(isset($cid)) {
-    $sql = mq("SELECT *
-            FROM goods
-            WHERE gcid = $cid
-            ORDER BY id DESC
+    $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, c.name AS cname, c.tCid AS tCid, t.name AS tname
+            FROM goods g
+            LEFT JOIN category c
+            ON g.gcid = c.id
+            LEFT JOIN tCategory t
+            ON c.tCid = t.id
+            WHERE g.gcid = $cid
+            ORDER BY g.id DESC
             LIMIT $start_num, $list
             ");
   } else {
-    $sql = mq("SELECT *
-            FROM goods
+    $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, c.name AS cname, c.tCid AS tCid, t.name AS tname
+            FROM goods g
+            LEFT JOIN category c
+            ON g.gcid = c.id
+            LEFT JOIN tCategory t
+            ON c.tCid = t.id
             ORDER BY id DESC
             LIMIT $start_num, $list
             ");
   }
+
 
   echo "<div class=\"normal-goods\">";
   $c_sql = mysqli_num_rows($sql); 
@@ -136,7 +150,7 @@ $cid = $_GET['id'];
       }
       echo "<div class=\"normal-list\">";
       echo "<a href=\"\">";
-      echo "<img src=\"../asset/img/top/{$goods['gpicture']}\" alt=\"상품사진\">";
+      echo "<img src=\"../asset/img/{$goods['tname']}/{$goods['gpicture']}\" alt=\"상품사진\">";
       echo "<div class=\"normal-name\">";
       echo "<small>{$title}</small>";
       echo "</div>";
