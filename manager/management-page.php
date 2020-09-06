@@ -43,30 +43,27 @@ require_once('../data/menu.php');
 
   <fieldset class="modify">
     <legend>상품수정</legend>
-    <form method="post" action="">
-      <input class="m-search" type="text" placeholder="상품코드">
+    <form method="post" action="g-m-d-page.php">
+      <input name="gcode" class="m-search" type="text" placeholder="상품코드">
       <input type="image" src="../asset/icon/search.png" class="m-btn">
     </form>
     <form class="g-list">
       <div class="g-once">
         <div class="g-once-c">
-          <h5><a href="">상품이름1</a></h5>
-          <img class="g-pic" src="../asset/icon/hot.png">
-          <p class="g-des">
-            이 상품으로 말할 것 같으면 이러쿵 저러쿵 해서 이런식으로 탄생한 비밀이 숨어있지요 그런데 이게 왜 그랬냐면요 말하자면 긴데
-          </p>
+          <h5><a href=""></a></h5>
+          <p class="g-des"></p>
         </div>
-        <input class="g-m-btn" type="submit" value="수정">
       </div>
-      
     </form>
     <div class="line"></div>
     <form method="post" action="">
-      <input class="m-name" type="text" placeholder="상품명">
-      <input class="m-descript" type="text" placeholder="상품설명">
-      <input type="file" id="m-image" accept="image/*" onchange="mSetThumbnail(event);">
+      <input class="m-name" type="text" placeholder="상품명" disabled>
+      <input class="m-descript" type="text" placeholder="상품설명" disabled>
+      <select class="category" name="gcategory" disabled></select>
+      <input class="u-price" type="text" name="gprice" placeholder="상품가격" disabled>
+      <input type="file" id="m-image" accept="image/*" onchange="mSetThumbnail(event);" disabled>
       <div id="m-image-container"></div>
-      <input class="g-btn-m" type="submit" value="등록하기">
+      <input class="g-btn-m" type="submit" value="수정하기" disabled>
     </form>
   </fieldset>
 </body>

@@ -28,4 +28,7 @@
 >logo change    
 
 - 2020-09-05
->pages(> management-page[INSERT] )    
+>pages(> management-page[INSERT], g-regi )    
+
+- 2020-09-06
+>pages(> g-m-d-page, g-d-page[DELETE], g-m-page[UPDATE] )    
