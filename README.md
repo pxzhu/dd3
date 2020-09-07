@@ -32,3 +32,8 @@
 
 - 2020-09-06
 >pages(> g-m-d-page, g-d-page[DELETE], g-m-page[UPDATE] )    
+
+- 2020-09-07
+>pages(> board[notice], home[notice], goods )    
+>database(> INSERT[notice] )    
+>code(> refactoring[goods, notice] )    

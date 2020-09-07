@@ -142,6 +142,27 @@ CREATE TABLE notice(
   ndate DATETIME NOT NULL,
   PRIMARY KEY(id)
 );
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('첫 번째 공지', '첫 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('두 번째 공지', '두 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('세 번째 공지', '세 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('네 번째 공지', '네 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('다섯 번째 공지', '다섯 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('여섯 번째 공지', '여섯 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('일곱 번째 공지', '일곱 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('여덟 번째 공지', '여덟 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('아홉 번째 공지', '아홉 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열 번째 공지', '열 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열한 번째 공지', '열한 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열두 번째 공지', '열두 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열세 번째 공지', '열세 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열네 번째 공지', '열네 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열다섯 번째 공지', '열다섯 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열여섯 번째 공지', '열여섯 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열일곱 번째 공지', '열일곱 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열여덟 번째 공지', '열여덟 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('열아홉 번째 공지', '열아홉 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('스무 번째 공지', '스무 공지의 내용은 이것입니다.', NOW());
+INSERT INTO notice(ntitle, ndescript, ndate) VALUES('스물한 번째 공지', '스물한 공지의 내용은 이것입니다.', NOW());
 
 
 CREATE TABLE qna(

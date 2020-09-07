@@ -35,15 +35,17 @@ $cid = $_GET['id'];
             LIMIT 4
             ");
     while($hot = mysqli_fetch_array($sql)) {
-      echo "<div class=\"hot-list\">";
-      echo "<a href=\"\">";
-      echo "<img src=\"../asset/img/{$hot['tname']}/{$hot['gpicture']}\" alt=\"\">";
-      echo "<div class=\"hot-name\">";
-      echo "<mark>HOT!</mark>";
-      echo "<small>{$hot['gname']}</small>";
-      echo "</div>";
-      echo "</a>";
-      echo "</div>";
+      echo "
+      <div class=\"hot-list\">
+        <a href=\"\">
+          <img src=\"../asset/img/{$hot['tname']}/{$hot['gpicture']}\" alt=\"\">
+          <div class=\"hot-name\">
+            <mark>HOT!</mark>
+            <small>{$hot['gname']}</small>
+          </div>
+        </a>
+      </div>
+      ";
     }
     ?>
   </div>
@@ -103,19 +105,7 @@ $cid = $_GET['id'];
             FROM goods
             ");
   }
-  $goods_total = mysqli_num_rows($sql); // 상품 총 갯수
-  $list = 15; // 한 페이지 당 상품 수
-  $page_list = 10; // 페이지 갯수
-  $page_num = ceil($page / $page_list); // 현재 페이지 위치
-  $page_start = (($page_num - 1) * $page_list) + 1; // 페이지 시작 번호
-  $page_end = $page_start + $page_list - 1; // 페이지 끝 번호
-  $page_total = ceil($goods_total / $list); // 페이징 한 페이지 수 구하기
-
-  if($page_end > $page_total) {
-    $page_end = $page_total;
-  } // 만약 블록의 마지막 번호가 페이지 수 보다 많다면 마지막 번호는 페이지 수
-  $pl_total = ceil($page_total / $page_list); // 블록 총 갯수
-  $start_num = ($page - 1) * $list;
+  require_once('../data/pre-page.php');
   if(isset($cid)) {
     $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, c.name AS cname, c.tCid AS tCid, t.name AS tname
             FROM goods g
@@ -148,48 +138,22 @@ $cid = $_GET['id'];
       if(strlen($title) > 18) {
         $title = str_replace($goods['gname'], mb_substr($goods['gname'], 0, 18, "UTF-8")."...", $goods['gname']);
       }
-      echo "<div class=\"normal-list\">";
-      echo "<a href=\"\">";
-      echo "<img src=\"../asset/img/{$goods['tname']}/{$goods['gpicture']}\" alt=\"상품사진\">";
-      echo "<div class=\"normal-name\">";
-      echo "<small>{$title}</small>";
-      echo "</div>";
-      echo "</a>";
-      echo "</div>";
+      echo "
+      <div class=\"normal-list\">
+        <a href=\"\">
+          <img src=\"../asset/img/{$goods['tname']}/{$goods['gpicture']}\" alt=\"상품사진\">
+          <div class=\"normal-name\">
+            <small>{$title}</small>
+          </div>
+        </a>
+      </div>
+      ";
     } 
   } else {
     echo "<p style=\"text-align: center;\">상품이 없습니다.</p>";
     echo "</div>";
   }
-
-    echo "<div class=\"page-num\">";
-      echo "<ul>";
-        if($page <= 1) {
-        } else {
-          echo "<li><a href='?page=1'>처음</a></li>";
-          $pre = $page - 1;
-          echo "<li><a href='?page=$pre'>이전</a></li>";
-        }
-        for($i = $page_start; $i <= $page_end; $i++) {
-          if($page == $i) {
-            echo "<li class=\"pn-select\">$i</li>";
-          } else {
-            echo "<li><a href='?page=$i'>$i</a></li>";
-          }
-        }
-        if($page_num < $page_total) {
-          $next = $page + 1;
-          if($next <= $page_total) {
-            echo "<li><a href='?page=$next'>다음</a></li>";
-          }
-        }
-        if($page >= $page_total) {
-        } else {
-          echo "<li><a href='?page=$page_total'>마지막</a></li>";
-        }
-      echo "</ul>";
-    echo "</div>";
-  echo "</div>";
+  require_once('../data/page.php');
   ?>
   
 </body>

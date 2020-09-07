@@ -38,15 +38,21 @@
     </nav>
   </div>
   <div>
-    <h4><a href="">공지사항</a></h4>
-    <h6><a href="">more</a></h6>
+    <h4>공지사항</a></h4>
+    <h6><a href="../board/notice.php">more</a></h6>
     <ul>
-      <li>안</li>
-      <li>녕</li>
-      <li>하</li>
-      <li>세</li>
-      <li>요</li>
-      <li>?</li>
+      <?php
+      $sql = mq("SELECT *
+                FROM notice
+                ORDER BY id DESC
+                LIMIT 6
+                ");
+      while($query = mysqli_fetch_array($sql)) {
+        echo "
+        <li><a href=\"../board/n-Read.php?id={$query['id']}\">{$query['ntitle']}</a></li>
+        ";
+      }
+      ?>
     </ul>
   </div>
   <div>
