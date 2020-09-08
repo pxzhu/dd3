@@ -1,0 +1,64 @@
+.read {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  margin: 100px 0 0 -400px;
+  float: left;
+  left: 50%;
+}
+.line {
+  float: left;
+  width: 800px;
+  border-top: 1px solid black;
+  margin: 5px 0 5px 0;
+}
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  width: 600px;
+  float: left;
+  /* border: 1px solid black; */
+  margin: 10px 0 5px 0;
+}
+.date {
+  width: 150px;
+  float: right;
+  /* border: 1px solid black; */
+  margin: 10px 0 5px 0;
+}
+.descript {
+  width: 748px;
+  height: 500px;
+  float: left;
+  border-bottom: 1px solid black;
+  padding: 0 25px 0 25px;
+  margin: 5px 0 5px 0;
+}
+input[type=button], input[type=submit] {
+  border: none;
+  background-color: gray;
+  color: black;
+  margin: 5px 5px 0 5px;
+  float: right;
+  width: 70px;
+  height: 25px;
+}
+input[type=button]:hover, input[type=submit]:hover {
+  background-color: darkblue;
+  color: white;
+}
+textarea {
+  width: 748px;
+  height: 480px;
+  resize: none;
+}
+.title input {
+  font-weight: bold;
+  width: 573px;
+  float: left;
+  /* border: 1px solid black; */
+  margin: 0 0 0 25px;
+}

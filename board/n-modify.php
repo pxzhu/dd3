@@ -26,18 +26,15 @@ $gid = $_GET['id'];
 
   echo "
   <div class=\"read\">
-    <form action=\"\">
-      <div class=\"title\">{$query['ntitle']}</div>
+    <form action=\"./n-update.php\" method=\"post\">
+      <input type=\"hidden\" value=\"{$query['id']}\" name=\"nid\">
+      <div class=\"title\"><input type=\"text\" value=\"{$query['ntitle']}\" name=\"ntitle\"></div>
       <div class=\"date\">{$query['ndate']}</div>
       <div class=\"line\"></div>
-      <div class=\"descript\">{$query['ndescript']}</div>
-      <input type=\"button\" value=\"수정\" onclick=\"location.href = './n-modify.php?id={$query['id']}'\">    
-      <input type=\"button\" value=\"목록\" onclick=\"location.href = './notice.php'\">  
+      <div class=\"descript\"><textarea name=\"ndescript\">{$query['ndescript']}</textarea></div>
+      <input type=\"submit\" value=\"완료\">    
+      <input type=\"button\" value=\"취소\" onclick=\"location.href = './notice.php'\">  
     </form>
-    <form action=\"./n-delete.php\" method=\"post\">
-        <input type=\"hidden\" value=\"{$query['id']}\" name=\"sid\">
-        <input type=\"submit\" value=\"삭제\">  
-      </form>
   </div>
   ";
   ?>

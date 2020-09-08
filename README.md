@@ -37,3 +37,6 @@
 >pages(> board[notice], home[notice], goods )    
 >database(> INSERT[notice] )    
 >code(> refactoring[goods, notice] )    
+
+- 2020-09-08
+>pages(> n-write, n-delete, n-create, n-update, n-modify, n-Read )    

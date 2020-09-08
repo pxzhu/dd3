@@ -54,7 +54,7 @@ require_once('../db/dbConn.php');
       ?>
     </table>
     <?php require_once('../data/page.php'); ?>
-    <input type="button" value="작성" onclick="location.href='./n-create.php'">
+    <input type="button" value="작성" onclick="location.href='./n-write.php'">
   </fieldset>
 </body>
 </html>
