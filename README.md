@@ -8,12 +8,12 @@
 >js(> slide show )    
 >database(> CREATE )    
 
-- 2020-08-30
+- 2020-08-31
 >pages(> management-page, index.html -> index.php[category SELECT] )    
 >js(> slide menu, upload )    
 >database(> INSERT[category] )    
 
-- 2020-08-30
+- 2020-09-01
 >pages(> goods )    
 >database(> CREATE, INSERT )    
 >function(> RandomString )    
