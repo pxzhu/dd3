@@ -1,0 +1,43 @@
+.u-s-form {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 900px;
+  height: 700px;
+  margin: 50px auto;
+}
+fieldset {
+  width: 800px;
+  margin: 50px auto;
+  border-left: none;
+  border-right: none;
+}
+.search-id {
+  height: 210px;
+}
+.search-pw {
+  height: 290px;
+}
+fieldset legend {
+  font-size: 25px;
+  font-weight: 700;
+}
+.search-btn {
+  float: right;
+  width: 70px;
+  height: 25px;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(92, 183, 236);
+  border-style: none;
+}
+.search-btn:hover {
+  background-color: slategray;
+}
+fieldset input[type="text"] {
+  width: 300px;
+  height: 50px;
+  margin: 15px 400px 5px 30px;
+  font-size: 24px;
+  border-style: none;
+  background-color: rgb(170, 176, 182);
+}

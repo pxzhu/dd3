@@ -40,3 +40,7 @@
 
 - 2020-09-08
 >pages(> n-write, n-delete, n-create, n-update, n-modify, n-Read )    
+
+- 2020-09-09
+>pages(> sign-in, sign-up, sign-up-check, u-id, u-pw, u-search, update-pw )    
+>database(> users[ALERT] )    

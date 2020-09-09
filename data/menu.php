@@ -5,7 +5,7 @@
   <a href="../pages/cart.html">
     <img class="cart" src="../asset/icon/shopping-cart.png" alt="Cart">
   </a>
-  <a href="../pages/mypage.html">
+  <a href="../pages/mypage.php">
     <img class="user" src="../asset/icon/user.png" alt="MyPage">
   </a>
 </div>

@@ -1,0 +1,33 @@
+fieldset {
+  width: 500px;
+  height: 200px;
+  margin: 200px auto;
+  border-left: none;
+  border-right: none;
+}
+fieldset legend {
+  font-size: 23px;
+  font-weight: 700;
+}
+input[type="password"] {
+  width: 400px;
+  height: 40px;
+  margin: 15px 0 5px 40px;
+  background-color: rgb(170, 176, 182);;
+  font-size: 23px;
+  border-style: none;
+  padding-left: 5px;
+}
+input[type="submit"] {
+  width: 80px;
+  height: 25px;
+  float: right;
+  margin-top: 15px;
+  font-size: 15px;
+  border-style: none;
+  background-color: rgb(92, 183, 236);
+  color: white;
+}
+input[type="submit"]:hover {
+  background-color: slategray;
+}
