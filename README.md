@@ -44,3 +44,6 @@
 - 2020-09-09
 >pages(> sign-in, sign-up, sign-up-check, u-id, u-pw, u-search, update-pw )    
 >database(> users[ALERT] )    
+
+- 2020-09-10
+>pages(> sign-in-check, mypage )    

@@ -22,9 +22,9 @@ require_once('../db/dbConn.php');
     <input type="button" value="ID / PW 찾기" onclick="location.href='../user/u-search.php'">
   </fieldset>
   <fieldset>
-    <form action="" method="post">
-      <input type="text" class="id-pw" name="" placeholder="ID">
-      <input type="password" class="id-pw" name="" placeholder="PW">
+    <form action="sign-in-check.php" method="post">
+      <input type="text" class="id-pw" name="uid" placeholder="ID">
+      <input type="password" class="id-pw" name="upw" placeholder="PW">
       <input type="submit" value="로그인">
     </form>
   </fieldset>
