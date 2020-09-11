@@ -173,3 +173,16 @@ CREATE TABLE qna(
   qdate DATETIME NOT NULL,
   PRIMARY KEY(id)
 );
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '이게 궁금합니다.', '이게 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '저게 궁금합니다.', '저게 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '그게 궁금합니다.', '그게 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '이것이 궁금합니다.', '이것이 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '저것이 궁금합니다.', '저것이 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '그것이 궁금합니다.', '그것이 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '이렇게나 궁금합니다.', '이렇게나 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '이만큼 궁금합니다.', '이만큼 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '완전 궁금합니다.', '완전 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '엄청 궁금합니다.', '엄청 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '대단히 궁금합니다.', '대단히 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '대박 궁금합니다.', '대박 궁금한데 답변 부탁드립니다.', NOW());
+INSERT INTO qna(quid, qtitle, qdescript, qdate) VALUES('pea', '미치게 궁금합니다.', '미치게 궁금한데 답변 부탁드립니다.', NOW());

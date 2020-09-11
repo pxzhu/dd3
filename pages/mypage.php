@@ -19,6 +19,7 @@ if(isset($uid)) {
   require_once('../data/menu.php');
   require_once('../data/icon.php');
   ?>
+  <input type="button" value="로그아웃" onclick="location.href='../db/sd.php'">
 </body>
 </html>
 <?php

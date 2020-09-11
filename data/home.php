@@ -38,7 +38,7 @@
     </nav>
   </div>
   <div>
-    <h4>공지사항</a></h4>
+    <h4>공지사항</h4>
     <h6><a href="../board/notice.php">more</a></h6>
     <ul>
       <?php
@@ -56,15 +56,21 @@
     </ul>
   </div>
   <div>
-    <h4><a href="">문의사항</a></h4>
-    <h6><a href="">more</a></h6>
+    <h4>문의사항</h4>
+    <h6><a href="../board/qna.php">more</a></h6>
     <ul>
-      <li>물</li>
-      <li>어</li>
-      <li>보</li>
-      <li>세</li>
-      <li>요</li>
-      <li>!</li>
+      <?php
+      $sql = mq("SELECT *
+                FROM qna
+                ORDER BY id DESC
+                LIMIT 6
+                ");
+      while($query = mysqli_fetch_array($sql)) {
+        echo "
+        <li><a href=\"../board/q-Read.php?id={$query['id']}\">{$query['qtitle']}</a></li>
+        ";
+      }
+      ?>
     </ul>
   </div>
 </span>
