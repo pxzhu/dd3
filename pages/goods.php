@@ -140,7 +140,7 @@ $cid = $_GET['id'];
       }
       echo "
       <div class=\"normal-list\">
-        <a href=\"\">
+        <a href=\"./goods-detail.php?id={$goods['id']}\">
           <img src=\"../asset/img/{$goods['tname']}/{$goods['gpicture']}\" alt=\"상품사진\">
           <div class=\"normal-name\">
             <small>{$title}</small>

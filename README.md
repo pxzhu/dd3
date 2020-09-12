@@ -51,3 +51,6 @@
 - 2020-09-11
 >pages(> mypage, board[qna], q-write, q-delete, q-create, q-update, q-modify, q-Read )    
 >database(> INSERT[qna], sd )    
+
+- 2020-09-12
+>pages(> goods-detail, r-create, total-reviews, home[review] )    

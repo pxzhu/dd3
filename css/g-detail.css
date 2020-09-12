@@ -1,0 +1,136 @@
+.g-r-detail {
+  border: 1px solid black;
+  width: 800px;
+  height: 2000px;
+  margin: 50px auto;
+}
+.goods-detail {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 750px;
+  height: 400px;
+  margin: 20px auto;
+}
+.goods-detail img {
+  width: 350px;
+  height: 360px;
+  margin: 20px 10px 0 15px;
+  float: left;
+}
+.goods-detail h3, h4, h5 {
+  margin: 0 0 0 0;
+}
+.goods-detail h3 {
+  margin: 40px 0 0 0;
+}
+.goods-detail h4 {
+  margin: 20px 0 40px 300px;
+  float: right;
+}
+.goods-detail h5 {
+  margin: 20px 200px 20px 0;
+  display: inline-block;
+}
+.goods-detail select {
+  width: 80px;
+  height: 30px;
+  margin: 11px 5px 11px 0;
+  float: right;
+}
+.goods-detail input[type="submit"] {
+  margin: 20px auto;
+  display: block;
+  width: 300px;
+  height: 40px;
+  border-style: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(92, 183, 236);
+}
+.goods-detail input[type="submit"]:hover {
+  background-color: slategray;
+}
+.g-descript {
+  display: block;
+  resize: none;
+  width: 750px;
+  height: 1000px;
+  margin: 20px auto;
+  left: 50%;
+  background-color: white;
+  text-align: center;
+  /*border-style: none;*/
+}
+.r-create {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 750px;
+  height: 150px;
+  margin: 20px auto;
+}
+.g-reviews {
+  border: 1px solid black;
+  width: 750px;
+  height: 350px;
+  margin: 20px auto;
+}
+#u-image-container img {
+  margin-top: 15px;
+  float: left;
+  width: 75px;
+  height: 40px;
+}
+#u-image {
+  width: 75px;
+}
+.r-text {
+  width: 500px;
+  height: 70px;
+  float: right;
+  margin: 0 20px 0 0;
+}
+.r-create input[type="submit"] {
+  float: right;
+  width: 90px;
+  height: 70px;
+  margin: 64px 20px 0 10px;
+  border-style: none;
+  color: white;
+  background-color: rgb(92, 183, 236);
+}
+.r-create input[type="submit"]:hover {
+  background-color: slategray;
+}
+.r-create h3 {
+  display: inline-block;
+}
+.r-create input[type="file"] {
+  display: block;
+  position: relative;
+}
+.g-reviews .r-p {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin: 20px 15px 5px 20px;
+}
+.g-reviews textarea {
+  margin: 10px 10px 0 10px;
+  background-color: white;
+  resize: none;
+  width: 600px;
+  height: 45px;
+  border-style: none;
+}
+.g-reviews p {
+  position: relative;
+  display: block;
+  margin: 0 0 30px 0;
+}
+.star {
+  width: 10px;
+  height: 10px;
+  margin: 10px 0 5px 0;
+  float: left;
+}

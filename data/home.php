@@ -8,33 +8,50 @@
 </div>
 <span class="board">
   <div>
-    <h4><a href="">최근 상품평</a></h4>
-    <h6><a href="">more</a></h6>
+    <h4>최근 상품평</h4>
+    <h6><a href="../pages/total-reviews.php">more</a></h6>
     <nav class="some_review">
-      <div>
-        <img class="re_pic" src="./asset/icon/hot.png">
-        <h5><a href="">상품이름1</a></h5>
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <p class="re_des">
-          상품이 아주 좋구만 그래서 또 사고싶지만 거지라 못사지롱ㅋㅋ ㅠㅠ
-        </p>
-      </div>
-      <div>
-        <img class="re_pic" src="./asset/icon/new.png">
-        <h5><a href="">상품이름2</a></h5>
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/star.png">
-        <img class="star" src="./asset/icon/favourite.png">
-        <img class="star" src="./asset/icon/favourite.png">
-        <p class="re_des">
-          상품이 아주 별로구만 그래서 추천하지 않는다네 별은 그래도 1개는 너무해서 3개줬다네..
-        </p>
-      </div>
+      <?php 
+      $sql = mq("SELECT g.id AS gid, g.gname AS gname, t.name AS tname, r.rpicture AS rpicture, r.rstars AS rstars, r.rdescript AS rdescript
+                FROM goods g
+                LEFT JOIN category c
+                ON g.gcid = c.id
+                LEFT JOIN tCategory t
+                ON c.tCid = t.id
+                LEFT JOIN reviews r
+                ON g.gcode = r.rgcode
+                ORDER BY r.id DESC
+                LIMIT 2
+                ");
+      while($query = mysqli_fetch_array($sql)) {
+        $gname = $query['gname'];
+        if(strlen($gname) > 6) {
+          $gname = str_replace($query['gname'], mb_substr($query['gname'], 0, 6, "UTF-8")."..", $query['gname']);
+        }
+        echo "
+        <div>
+          <img class=\"re_pic\" src=\"../asset/img/rimg/{$query['tname']}/{$query['rpicture']}\">
+          <h5><a href=\"../pages/goods-detail.php?id={$query['gid']}\">{$gname}</a></h5>
+        ";
+        $count = 1;
+        while($count <= $query['rstars']) {
+          echo "
+          <img class=\"star\" src=\"../asset/icon/star.png\">
+          ";
+          $count++;
+        }
+        while($count <= 5) {
+          echo "
+          <img class=\"star\" src=\"../asset/icon/favourite.png\">
+          ";
+          $count++;
+        }
+        echo "
+          <p class=\"re_des\">{$query['rdescript']}</p>
+        </div>
+        ";
+      }
+      ?>
     </nav>
   </div>
   <div>

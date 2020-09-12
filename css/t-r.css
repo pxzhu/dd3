@@ -1,0 +1,22 @@
+fieldset {
+  width: 800px;
+  height: 600px;
+  margin: 100px auto;
+}
+fieldset legend {
+  font-size: 24px;
+  font-weight: 700;
+}
+.review-list {
+  float: left;
+  display: inline-block;
+  border: 1px solid black;
+  width: 178px;
+  height: 200px;
+  margin: 25px 10px 5px 10px;
+}
+.review-list img {
+  width: 178px;
+  height: 150px;
+  margin: 0 auto;
+}
