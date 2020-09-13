@@ -2,6 +2,8 @@
 require_once('../db/dbConn.php'); 
 require_once('../data/menu.php'); 
 $cid = $_GET['id'];
+$category = $_POST['category'];
+$stext = $_POST['stext'];
 ?>
 <!DOCTYPE html>
 <html lang="kr">
@@ -68,9 +70,26 @@ $cid = $_GET['id'];
           echo "<h1>{$normal['tname']}</h1>";
           echo "<h3>{$normal['cname']}</h3>";
         }
+        $s = 1;
+      } else if(isset($category) && isset($stext)) {
+        $sql = mq("SELECT DISTINCT c.name AS cname, t.name AS tname
+                  FROM goods g
+                  LEFT JOIN category c
+                  ON g.gcid = c.id
+                  LEFT JOIN tCategory t
+                  ON c.tCid = t.id
+                  WHERE c.name = '$category'
+                  AND g.gname LIKE '%$stext%'
+                  ");
+        while($normal = mysqli_fetch_array($sql)) {
+          echo "<h1>{$normal['tname']}</h1>";
+          echo "<h3>{$normal['cname']}</h3>";
+        }
+        $s = 2;
       } else {
         echo "<h1>대분류</h1>";
         echo "<h3>소분류</h3>";
+        $s = 3;
       }
       ?>
     </div>
@@ -95,18 +114,28 @@ $cid = $_GET['id'];
   } else {
     $page = 1;
   }
-  if(isset($cid)) {
+  if($s === 1) {
     $sql = mq("SELECT *
               FROM goods
               WHERE gcid = $cid
+              ");
+  } else if($s === 2) {
+    $sql = mq("SELECT *
+              FROM goods g
+              LEFT JOIN category c
+              ON g.gcid = c.id
+              WHERE c.name = '$category'
+              AND g.gname LIKE '%$stext%'
               ");
   } else {
     $sql = mq("SELECT * 
             FROM goods
             ");
   }
+  $list = 15; // 한 페이지 당 상품 수
+  $page_list = 10; // 페이지 갯수
   require_once('../data/pre-page.php');
-  if(isset($cid)) {
+  if($s === 1) {
     $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, c.name AS cname, c.tCid AS tCid, t.name AS tname
             FROM goods g
             LEFT JOIN category c
@@ -114,6 +143,18 @@ $cid = $_GET['id'];
             LEFT JOIN tCategory t
             ON c.tCid = t.id
             WHERE g.gcid = $cid
+            ORDER BY g.id DESC
+            LIMIT $start_num, $list
+            ");
+  } else if($s === 2) {
+    $sql = mq("SELECT g.id AS id, g.gname AS gname, g.gexplain AS gexplain, g.gcid AS gcid, g.gpicture AS gpicture, c.name AS cname, c.tCid AS tCid, t.name AS tname
+            FROM goods g
+            LEFT JOIN category c
+            ON g.gcid = c.id
+            LEFT JOIN tCategory t
+            ON c.tCid = t.id
+            WHERE c.name = '$category'
+            AND g.gname LIKE '%$stext%'
             ORDER BY g.id DESC
             LIMIT $start_num, $list
             ");

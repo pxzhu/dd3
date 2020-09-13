@@ -38,19 +38,9 @@ require_once('../db/dbConn.php');
               FROM reviews
               ");
     }
-    $goods_total = mysqli_num_rows($sql); // 상품 총 갯수
     $list = 8; // 한 페이지 당 상품 수
     $page_list = 10; // 페이지 갯수
-    $page_num = ceil($page / $page_list); // 현재 페이지 위치
-    $page_start = (($page_num - 1) * $page_list) + 1; // 페이지 시작 번호
-    $page_end = $page_start + $page_list - 1; // 페이지 끝 번호
-    $page_total = ceil($goods_total / $list); // 페이징 한 페이지 수 구하기
-      
-    if($page_end > $page_total) {
-      $page_end = $page_total;
-    } // 만약 블록의 마지막 번호가 페이지 수 보다 많다면 마지막 번호는 페이지 수
-    $pl_total = ceil($page_total / $page_list); // 블록 총 갯수
-    $start_num = ($page - 1) * $list;
+    require_once('../data/pre-page.php');
     $sql = mq("SELECT r.id AS rid, g.id AS gid, r.rpicture AS rpicture, r.rdescript AS rdescript, t.name AS tname
               FROM reviews r
               LEFT JOIN goods g

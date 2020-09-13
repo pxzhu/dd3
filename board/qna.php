@@ -37,6 +37,8 @@ $uid = $_SESSION['userid'];
                 FROM qna
                 ORDER BY id DESC
                 ");
+      $list = 10; // 한 페이지 당 상품 수
+      $page_list = 10; // 페이지 갯수
       require_once('../data/pre-page.php');
       $sql = mq("SELECT *
                 FROM qna

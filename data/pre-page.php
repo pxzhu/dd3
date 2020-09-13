@@ -1,7 +1,5 @@
 <?php
   $goods_total = mysqli_num_rows($sql); // 상품 총 갯수
-  $list = 10; // 한 페이지 당 상품 수
-  $page_list = 10; // 페이지 갯수
   $page_num = ceil($page / $page_list); // 현재 페이지 위치
   $page_start = (($page_num - 1) * $page_list) + 1; // 페이지 시작 번호
   $page_end = $page_start + $page_list - 1; // 페이지 끝 번호

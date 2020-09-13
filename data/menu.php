@@ -2,7 +2,7 @@
   <a href="../index.php">
     <img class="logo" src="../asset/icon/logo.png" alt="Logo">
   </a>
-  <a href="../pages/cart.html">
+  <a href="../pages/cart.php">
     <img class="cart" src="../asset/icon/shopping-cart.png" alt="Cart">
   </a>
   <a href="../pages/mypage.php">
@@ -12,16 +12,17 @@
 <div class="btn"></div>
 <div id="menu">
   <div class="close"></div>
-  <form class="search" method="post" action="">
+  <form class="search" method="post" action="../pages/goods.php">
     <select name="category">
+      <option selected disabled hidden>category</option>
       <?php
-      $sql = mq("SELECT name FROM tCategory");
+      $sql = mq("SELECT name FROM category");
       while($tc = mysqli_fetch_array($sql)) {
-        echo "<option>{$tc['name']}</option>";
+        echo "<option value=\"{$tc['name']}\">{$tc['name']}</option>";
       }
       ?>
     </select>
-    <input type="text">
+    <input type="text" name="stext">
     <input type="image" src="../asset/icon/search.png" class="s-btn">
   </form>
   <ul>

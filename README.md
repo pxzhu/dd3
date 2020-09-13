@@ -54,3 +54,6 @@
 
 - 2020-09-12
 >pages(> goods-detail, r-create, total-reviews, home[review] )    
+
+- 2020-09-13
+>pages(> total-reviews, goods, goods-detail, pre-page, notice, qna )    
