@@ -1,0 +1,57 @@
+#cart {
+  width: 900px;
+  height: 600px;
+  margin: 50px auto;
+}
+#cart h2 {
+  text-align-last: center;
+}
+.c-goods {
+  border-top: 1px solid slategray;
+  border-bottom: 1px solid slategray;
+  width: 800px;
+  margin: 0 auto;
+}
+.c-goods div {
+  display: inline-block;
+  width: 650px;
+  height: 130px;
+  margin: 0;
+}
+.c-goods div img {
+  width: 100px;
+  float: left;
+  margin: 10px 0 0 10px;
+}
+.c-goods div h5, h6 {
+  display: inline-block;
+  width: 500px;
+  margin: 10px 0 5px 15px;
+}
+.c-total {
+  width: 800px;
+  border-bottom: 1px solid slategray;
+  height: 100px;
+  margin: 20px auto;
+}
+.c-total span {
+  margin: 10px 0 10px 30px;
+}
+.c-t {
+  margin: 40px 0 0 0;
+  float: right;
+}
+input[type="submit"] {
+  display: block;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  border-style: none;
+  color: white;
+  float: right;
+  margin: 50px 0 0 0;
+  background-color: rgb(92, 183, 236);
+}
+input[type="submit"]:hover {
+  background-color: slategray;
+}

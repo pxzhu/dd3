@@ -30,7 +30,7 @@ $gid = $_GET['id'];
   $query = mysqli_fetch_array($sql);
   echo "
   <div class=\"g-r-detail\">
-    <form action=\"\" method=\"post\" class=\"goods-detail\">
+    <form action=\"./add-cart.php\" method=\"post\" class=\"goods-detail\">
       <img src=\"../asset/img/{$query['tname']}/{$query['gpicture']}\" alt=\"\">
       <input type=\"hidden\" name=\"gcode\" value=\"{$query['gcode']}\">
       <h3>{$query['gname']}</h3>

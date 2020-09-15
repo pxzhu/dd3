@@ -57,3 +57,6 @@
 
 - 2020-09-13
 >pages(> total-reviews, goods, goods-detail, pre-page, notice, qna )    
+
+- 2020-09-15
+>pages(> goods-detail, carts )    
